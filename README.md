@@ -1,31 +1,41 @@
 # 🧠 NeuroRecall
 
-**NeuroRecall** is an AI-powered learning optimization platform inspired by neuroscience. Users can upload learning materials, generate quizzes with AI, and retain knowledge using spaced repetition. The app features performance analytics, Huberman-style learning tips, and gamification to boost engagement.
+**NeuroRecall** is a modern, AI-powered learning optimization platform with a beautiful SaaS UI. Users can upload learning materials, generate quizzes with AI, and retain knowledge using spaced repetition. The app features performance analytics, Huberman-style brain tips, and gamification to boost engagement.
+
+---
 
 ## 🚀 Features
 
-### ✅ **Implemented**
+### ✅ **Current**
+- **Modern SaaS UI**: Glassmorphic cards, gradients, Sora/Inter fonts, and accent color coding throughout
 - **User Authentication**: Secure signup/login with JWT tokens
-- **Note Upload**: Upload and manage learning materials
-- **Dashboard**: Clean interface for note management
+- **Note Upload**: Upload and manage learning materials (PDF, text, markdown, or direct input)
+- **Dashboard**: Animated XP bar, glowing streak flame, and rank badge
 - **Gamification**: XP system, ranks, and streaks
-- **Responsive Design**: Modern UI with Tailwind CSS
+- **Brain Optimization Tips**: 🧬 emoji, actionable neuroscience-based tips, beautiful pop-up
+- **Quiz Generation**: AI-powered flashcards, MCQ, and fill-in-the-blank quizzes
+- **Spaced Repetition**: SM2 algorithm for optimal review scheduling
+- **Quiz & Review UI**: Glassy cards, accent gradients, pill buttons, and smooth animations
+- **Responsive Design**: Fully mobile-friendly
 - **Database Models**: Complete MongoDB schema for all features
 
 ### 🚧 **In Development**
-- AI Quiz Generation (OpenAI/DeepSeek integration)
-- Spaced Repetition Engine (SM2 algorithm)
-- Quiz Interface and Review System
-- Analytics Dashboard
-- Brain Optimization Tips
+- Advanced analytics dashboard
+- Collaborative learning
+- Mobile app (React Native/Expo)
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18 + Tailwind CSS + React Router
-- **Backend**: Node.js + Express + MongoDB
+- **Frontend**: React 18 + Tailwind CSS + React Router (Sora/Inter fonts, glassmorphism, gradients)
+- **Backend**: Node.js + Express + MongoDB (Atlas)
 - **Authentication**: JWT + bcrypt
-- **Database**: MongoDB with Mongoose ODM
-- **Styling**: Tailwind CSS
+- **Database**: MongoDB Atlas with Mongoose ODM
+- **Styling**: Tailwind CSS (with plugins and custom themes)
+- **Deployment**: Vercel (frontend), Render (backend)
+
+---
 
 ## 📁 Project Structure
 
@@ -49,8 +59,7 @@ neuro-recall/
 │   │   ├── hooks/           # Custom hooks
 │   │   ├── utils/           # Helper functions
 │   │   ├── styles/          # CSS files
-│   │   ├── App.jsx          # Main app component
-│   │   └── index.js         # Entry point
+│   │   └── App.jsx          # Main app component
 │   ├── public/              # Static files
 │   └── package.json
 ├── docs/                    # Documentation
@@ -58,11 +67,47 @@ neuro-recall/
 └── README.md
 ```
 
+---
+
+## 🧠 UI/UX Highlights
+- **Glassmorphic Cards**: All main sections use glassy, blurred backgrounds with accent borders and shadows
+- **Accent Gradients**: Headings, numbers, and buttons use beautiful accent gradients
+- **Sora/Inter Fonts**: Sora for headings, Inter for body for a premium SaaS feel
+- **Animated XP Bar**: Shows progress toward next rank
+- **Streak & Rank**: Glowing flame and badge, always visible in the navbar
+- **Brain Tips**: 🧬 emoji, Sora font, and improved pop-up for actionable tips
+- **Quiz/Review**: Glassy cards, pill buttons, and smooth transitions
+
+---
+
+## 🔁 Spaced Repetition (SM2 Algorithm)
+
+NeuroRecall uses a neuroscience-backed spaced repetition system to help you remember more, for longer. Each quiz is scheduled for review using the SM2 algorithm (the same method used by Anki):
+
+- **Adaptive Scheduling:** Questions you find easy are shown less often, while harder ones are reviewed more frequently.
+- **Personalized Intervals:** After each quiz, you rate the difficulty (Easy, Medium, Hard). The system updates the next review date based on your performance.
+- **Automatic Review Buckets:** Quizzes are grouped into Today, Due Soon, and Later, so you always know what to focus on.
+- **Streaks & XP:** Completing reviews daily increases your streak and XP, gamifying your learning journey.
+
+**Technical Note:**
+- The SM2 algorithm tracks each quiz’s easiness factor, interval, and repetitions. Your feedback directly influences the review schedule for maximum retention.
+
+---
+
+## 📊 Database Schema
+- **User**: Email, password hash, XP, rank, streak, settings
+- **Note**: User association, content, tags, quizzes
+- **Quiz**: Linked to note/user, spaced repetition data, questions, history
+- **QuizSession**: User quiz attempts, answer tracking, performance
+- **Tip**: Brain optimization tips, per user, per day
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
-- MongoDB (local or Atlas)
+- MongoDB Atlas account
 - npm or yarn
 
 ### 1. Clone the Repository
@@ -76,105 +121,57 @@ cd neuro-recall
 cd backend
 npm install
 ```
-
 Create a `.env` file in the backend directory:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/neuro-recall
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 ```
-
+PORT=5001
+MONGODB_URI=your-mongodb-atlas-uri
+JWT_SECRET=your-super-secret-jwt-key
+OPENAI_API_KEY=your-openai-key
+```
 Start the backend server:
 ```bash
 node src/app.js
 ```
 
-The backend will run on `http://localhost:5000`
-
 ### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
-```
-
-Start the frontend development server:
-```bash
 npm start
 ```
 
-The frontend will run on `http://localhost:3000`
-
-### 4. Database Setup
-Make sure MongoDB is running locally, or update the `MONGODB_URI` in your `.env` file to point to your MongoDB Atlas cluster.
-
-## 📊 Database Schema
-
-### User Model
-- Email, password hash
-- XP, rank, streak tracking
-- Settings and preferences
-
-### Note Model
-- User association
-- Content and metadata
-- Tags and file information
-
-### Quiz Model
-- AI-generated questions
-- Spaced repetition data (SM2 algorithm)
-- Performance tracking
-
-### QuizSession Model
-- User quiz attempts
-- Answer tracking
-- Performance metrics
-
-## 🔐 Authentication
-
-The app uses JWT tokens for authentication:
-- Tokens are stored in localStorage
-- Protected routes require valid tokens
-- Automatic token validation on API calls
-
-## 🎮 Gamification System
-
-- **XP Points**: Earn XP for uploading notes, completing quizzes
-- **Ranks**: Progress through ranks (Neural Newbie → Recall Master)
-- **Streaks**: Maintain daily learning streaks
-- **Progress Tracking**: Visual progress indicators
-
-## 🧠 Spaced Repetition
-
-The app implements the SM2 algorithm for optimal review scheduling:
-- Questions are scheduled based on difficulty ratings
-- Easy questions appear less frequently
-- Hard questions are reviewed more often
-- Adaptive intervals based on performance
-
-## 🚧 Next Steps
-
-1. **AI Integration**: Connect OpenAI/DeepSeek for quiz generation
-2. **Quiz Interface**: Build interactive quiz components
-3. **Analytics Dashboard**: Create performance visualization
-4. **Mobile App**: React Native/Expo implementation
-5. **Advanced Features**: File upload, collaborative learning
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support, email support@neurorecall.com or create an issue in the repository.
+### 4. Deployment
+- **Frontend**: Deploy to Vercel (set environment variables as needed)
+- **Backend**: Deploy to Render (set environment variables as needed)
 
 ---
 
-**Built with ❤️ for better learning**
+## 📝 .gitignore
+```
+node_modules/
+.env
+dist/
+build/
+.DS_Store
+```
+
+---
+
+## 🖼️ Screenshots
+- **Landing Page**: Modern SaaS hero, glassmorphic navbar, accent gradients
+- **Dashboard**: Glass cards, animated XP bar, streak, rank badge, brain tips pop-up
+- **Quiz/Review**: Glassy cards, accent gradients, pill buttons, smooth transitions
+- **Auth**: Glassmorphic sign up/login, Sora/Inter fonts, animated labels
+
+---
+
+## 🤝 How to Contribute
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes (UI, backend, docs, etc.)
+4. Add tests if applicable
+5. Submit a pull request
+
+---
+
+**Built with ❤️ for better learning and a beautiful user experience**
