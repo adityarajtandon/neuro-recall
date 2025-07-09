@@ -32,7 +32,7 @@ const Dashboard = ({ user, onLogout, onNoteUpload, themeToggle }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const API_BASE = 'http://localhost:5001/api';
+  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
   // Helper: today's date string
   const todayStr = new Date().toISOString().slice(0, 10);
