@@ -1,5 +1,20 @@
+# Node modules
 node_modules/
-.env
-dist/
+frontend/node_modules/
+backend/node_modules/
+
+# Environment files
+
+backend/.env
+frontend/.env
+
+# Build and dist folders
 build/
+frontend/build/
+backend/build/
+dist/
+frontend/dist/
+backend/dist/
+
+# System files
 .DS_Store
