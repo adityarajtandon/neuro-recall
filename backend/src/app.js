@@ -20,8 +20,20 @@ const openai = new OpenAI({
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'https://neuro-recall.vercel.app',  // Your Vercel frontend domain
+    'http://localhost:3000',            // Local development
+    /\.vercel\.app$/                    // Any Vercel preview deployments
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' })); // Increased limit for file uploads
 
 // Database connection
