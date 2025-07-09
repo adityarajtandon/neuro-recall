@@ -130,19 +130,59 @@ OPENAI_API_KEY=your-openai-key
 ```
 Start the backend server:
 ```bash
-node src/app.js
+npm start
 ```
 
 ### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
+```
+
+Create a `.env` file in the frontend directory:
+```
+REACT_APP_API_URL=http://localhost:5001/api
+```
+
+Start the frontend development server:
+```bash
 npm start
 ```
 
-### 4. Deployment
-- **Frontend**: Deploy to Vercel (set environment variables as needed)
-- **Backend**: Deploy to Render (set environment variables as needed)
+---
+
+## 🚀 Deployment
+
+### Backend Deployment (Render)
+
+1. Push your code to GitHub
+2. Sign up for [Render](https://render.com/)
+3. Create a new Web Service and connect your GitHub repository
+4. Configure the build settings:
+   - **Environment**: Node
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+5. Add the following environment variables:
+   - `PORT`: 10000 (or any port Render allows)
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
+   - `JWT_SECRET`: A secure random string
+   - `OPENAI_API_KEY`: Your OpenAI API key
+6. Deploy
+
+Detailed deployment instructions are available in [docs/render-deployment.md](docs/render-deployment.md).
+
+### Frontend Deployment (Vercel)
+
+1. Push your code to GitHub
+2. Sign up for [Vercel](https://vercel.com/)
+3. Import your repository
+4. Configure the build settings:
+   - **Framework Preset**: Create React App
+   - **Build Command**: `cd frontend && npm install && npm run build`
+   - **Output Directory**: `frontend/build`
+5. Add the following environment variable:
+   - `REACT_APP_API_URL`: Your Render backend URL (e.g., https://neuro-recall-backend.onrender.com/api)
+6. Deploy
 
 ---
 
