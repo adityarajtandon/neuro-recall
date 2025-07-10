@@ -12,17 +12,12 @@
 - **Note Upload**: Upload and manage learning materials (PDF, text, markdown, or direct input)
 - **Dashboard**: Animated XP bar, glowing streak flame, and rank badge
 - **Gamification**: XP system, ranks, and streaks
-- **Brain Optimization Tips**: 🧬 emoji, actionable neuroscience-based tips, beautiful pop-up
+- **Brain Optimization Tips**: actionable neuroscience-based tips
 - **Quiz Generation**: AI-powered flashcards, MCQ, and fill-in-the-blank quizzes
 - **Spaced Repetition**: SM2 algorithm for optimal review scheduling
 - **Quiz & Review UI**: Glassy cards, accent gradients, pill buttons, and smooth animations
-- **Responsive Design**: Fully mobile-friendly
 - **Database Models**: Complete MongoDB schema for all features
 
-### 🚧 **In Development**
-- Advanced analytics dashboard
-- Collaborative learning
-- Mobile app (React Native/Expo)
 
 ---
 
@@ -75,7 +70,6 @@ neuro-recall/
 - **Sora/Inter Fonts**: Sora for headings, Inter for body for a premium SaaS feel
 - **Animated XP Bar**: Shows progress toward next rank
 - **Streak & Rank**: Glowing flame and badge, always visible in the navbar
-- **Brain Tips**: 🧬 emoji, Sora font, and improved pop-up for actionable tips
 - **Quiz/Review**: Glassy cards, pill buttons, and smooth transitions
 
 ---
