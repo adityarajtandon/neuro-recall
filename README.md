@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Features
+## Features
 
 ### ✅ **Current**
 - **Modern SaaS UI**: Glassmorphic cards, gradients, Sora/Inter fonts, and accent color coding throughout
@@ -21,7 +21,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 + Tailwind CSS + React Router (Sora/Inter fonts, glassmorphism, gradients)
 - **Backend**: Node.js + Express + MongoDB (Atlas)
@@ -64,7 +64,7 @@ neuro-recall/
 
 ---
 
-## 🧠 UI/UX Highlights
+## UI/UX Highlights
 - **Glassmorphic Cards**: All main sections use glassy, blurred backgrounds with accent borders and shadows
 - **Accent Gradients**: Headings, numbers, and buttons use beautiful accent gradients
 - **Sora/Inter Fonts**: Sora for headings, Inter for body for a premium SaaS feel
@@ -97,7 +97,7 @@ NeuroRecall uses a neuroscience-backed spaced repetition system to help you reme
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -145,7 +145,7 @@ npm start
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment (Render)
 
@@ -180,7 +180,7 @@ Detailed deployment instructions are available in [docs/render-deployment.md](do
 
 ---
 
-## 📝 .gitignore
+## .gitignore
 ```
 node_modules/
 .env
@@ -191,7 +191,7 @@ build/
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 - **Landing Page**: Modern SaaS hero, glassmorphic navbar, accent gradients
 - **Dashboard**: Glass cards, animated XP bar, streak, rank badge, brain tips pop-up
 - **Quiz/Review**: Glassy cards, accent gradients, pill buttons, smooth transitions
@@ -207,5 +207,3 @@ build/
 5. Submit a pull request
 
 ---
-
-**Built with ❤️ for better learning and a beautiful user experience**
